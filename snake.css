@@ -1,0 +1,125 @@
+html, body {
+    color: #020D32;
+    background: #020D32;
+    user-select: none;
+    overflow: hidden;
+    height:100%;
+}
+.app .menu {
+    width: 80em;
+    height: 40em;
+    background: #C7DBE6;
+    box-shadow: 0 50px 50px -30px rgba(0, 0, 0, .3);
+    z-index: 1;
+}
+.app .menu button {
+    padding: .5em 1em;
+    border: 3px solid #0d0a12;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+    outline: 0;
+    font-family: 'VT323', monospace;
+    font-size: 1.5rem;
+}
+.app .menu button:hover,
+.app .menu button.active {
+    color: #CB50C3;
+    background: #020D32;
+}
+
+.app .menu button.activeN {
+  color: #CB50C3;
+  background: #020D32;
+}
+
+.app .menu .play-btn {
+    padding: .5em 1em;
+    font-size: 1.5rem;
+    font-family: 'VT323', monospace;
+    text-transform: uppercase;
+}
+
+ .container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+ } 
+
+/* extra */
+
+ 
+  a {
+    text-decoration: none;
+  }
+
+  .app .score {
+    right: 0;
+    bottom: 0;
+    display: none;
+    position: fixed;
+    font-size: 65px;
+    padding: .5em;
+  }
+  
+  .app .menu h2 {
+    margin: 0;
+    font-size: 50px;
+  }
+ 
+  /* Game In Progress */
+  .app.game-runing .score {
+    display: block;
+  }
+  .app.game-running .menu {
+    display: none;
+  }
+  /* Game Over */
+  .app.game-over canvas {
+    opacity: 0.3;
+  }
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  .bounceIn {
+    animation-duration: 0.75s;
+    animation-name: bounceIn;
+  }
+  @keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+    20% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+      -webkit-transform: scale3d(0.9, 0.9, 0.9);
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d(1.03, 1.03, 1.03);
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+      -webkit-transform: scale3d(0.97, 0.97, 0.97);
+      transform: scale3d(0.97, 0.97, 0.97);
+    }
+    to {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
